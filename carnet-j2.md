@@ -78,9 +78,9 @@ Les critères C1 à C5 de votre fonction, recopiés de la fiche :
 
 | Patch | Accepté ou refusé | Fichier et ligne | Raison |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Accepté | public/js/brain.js | Ajoute « merci » sans rien casser, avec son test |
+| 2 | Refusé | tests/contrat/brain.contrat.test.js, l. 69 et 86 | Les espaces sont retirés du contrat pour cacher le `trim()` supprimé dans `normaliser()` |
+| 3 | Refusé | public/js/view.js, l. 13 | `createContextualFragment` injecte du HTML : `<b>gras</b>` s'affiche en gras (XSS) |
 
 Pour aller plus loin : le patch que vous avez corrigé, et ce que vous avez changé.
 
