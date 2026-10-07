@@ -93,3 +93,5 @@ Je sais lire un test rouge : son nom donne la règle, son message montre l'écar
 ## J3
 
 Étape 1, prédiction : avec un troisième mot, « aide » listera bien les trois mots (la liste est calculée), mais dira encore « deux mots » (ce nombre est écrit à la main).
+
+Étape 3, Lighthouse (Accessibilité) : 100 avec le label ; 93 sans le label, alerte « Form elements do not have associated labels » sur textarea#message.
