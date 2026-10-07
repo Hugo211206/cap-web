@@ -40,3 +40,25 @@ Il faut Node 24.20 ou plus. Dans un terminal PowerShell, depuis ce dossier `atel
 - `brain.js` : le cerveau. Il contient la limite, les mots reconnus et les réponses, et exporte deux fonctions pures, sans accès à la page : `validateMessage` vérifie un message (texte, non vide, pas trop long) et `replyTo` choisit la réponse.
 - `view.js` : l'affichage. `renderMessages` dessine l'historique de la conversation dans la page, en texte seulement (jamais de HTML injecté). Il ne décide d'aucune réponse.
 - `app.js` : le câblage. Il écoute le formulaire, appelle `validateMessage` puis `replyTo`, ajoute les messages à l'historique, le sauvegarde dans le navigateur (`localStorage`) et demande l'affichage à `view.js`.
+
+## Arborescence
+
+```
+atelier/
+├── public/              la page servie au navigateur
+│   ├── index.html       la structure de la page
+│   ├── styles.css       la mise en forme, version mobile comprise
+│   └── js/
+│       ├── brain.js     les règles : validateMessage, replyTo, compterMots
+│       ├── view.js      l'affichage de la conversation
+│       └── app.js       le câblage : formulaire, compteur, version, conseil
+├── server/
+│   ├── app.js           le serveur : fichiers publics, /version.json, /api/conseil
+│   └── start.js         lance le serveur sur http://127.0.0.1:3000
+├── tests/               les tests automatisés (npm test)
+│   └── contrat/         le contrat du formateur, à ne jamais modifier
+├── scripts/             les outils de contrôle (dépendances, tests, build)
+├── README.md            ce fichier
+├── SPEC.md              la spécification
+└── AGENTS.md            les conventions du projet
+```
